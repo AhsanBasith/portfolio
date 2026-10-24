@@ -37,7 +37,9 @@ const FEATURED = [
     description:
       "Web project related to vehicle tax information, presented as a lightweight public-facing site.",
     language: "CSS",
+    technologies: ["HTML", "CSS", "JavaScript"],
     category: ["Web", "GitHub"],
+    url: `https://github.com/${GITHUB_USER}/pajak-kendaraan.github.io`,
     accent: "mint",
     icon: Globe,
   },
@@ -47,7 +49,9 @@ const FEATURED = [
     description:
       "A web-based application focused on land and building tax workflows.",
     language: "JavaScript",
+    technologies: ["HTML", "CSS", "JavaScript", "PHP"],
     category: ["Web", "GitHub"],
+    url: `https://github.com/${GITHUB_USER}/Aplikasi-Pajak-Bumi-dan-Bangunan-Berbasis-WEB`,
     accent: "violet",
     icon: Layers3,
   },
@@ -57,6 +61,7 @@ const FEATURED = [
     description:
       "A JavaScript project integrating movie data from The Movie Database API.",
     language: "JavaScript",
+    technologies: ["HTML", "CSS", "JavaScript", "REST API"],
     category: "API",
     url: `https://github.com/${GITHUB_USER}/Movie_API_with_MovieDB`,
     accent: "orange",
@@ -68,6 +73,7 @@ const FEATURED = [
     description:
       "A decision-support project applying the Weighted Product method to production feasibility assessment.",
     language: "JavaScript",
+    technologies: ["HTML", "CSS", "JavaScript"],
     category: "Logic",
     url: `https://github.com/${GITHUB_USER}/SPK-Metode-Weighted-Product-Dalam-Menentukan-Kelayakan-Peningkatan-Produksi-Kue-Kering`,
     accent: "blue",
@@ -79,9 +85,23 @@ const FEATURED = [
     description:
       "A simple web application for recording items and organizing them by classification.",
     language: "JavaScript",
+    technologies: ["HTML", "CSS", "JavaScript"],
     category: ["Web", "GitHub"],
+    url: `https://github.com/${GITHUB_USER}/Aplikasi-berbasis-web-sederhana-untuk-mencatat-barang-beserta-klasifikasinya`,
     accent: "pink",
     icon: Database,
+  },
+  {
+    name: "rFruits",
+    title: "Fruit Sales Receipt App",
+    description:
+      "A mobile application for creating and managing fruit sales receipts.",
+    language: "JavaScript",
+    technologies: ["React Native", "JavaScript"],
+    category: ["Mobile Application", "GitHub"],
+    url: `https://github.com/${GITHUB_USER}/rfruits`,
+    accent: "mint",
+    icon: Smartphone,
   },
   {
     name: "return-pembelian",
@@ -89,7 +109,9 @@ const FEATURED = [
     description:
       "A repository for a purchase-return workflow built with the Blade templating ecosystem.",
     language: "Blade",
+    technologies: ["Laravel", "Blade", "PHP", "MySQL"],
     category: ["Web", "GitHub"],
+    url: `https://github.com/${GITHUB_USER}/return-pembelian`,
     accent: "yellow",
     icon: GitBranch,
   },
@@ -175,6 +197,7 @@ const FEATURED = [
       "React",
       "Backend Development",
       "API Integration",
+      "AWS Amplify",
     ],
     category: ["EV Technology", "Mobile Application", "Web"],
     highlights: [
@@ -374,7 +397,7 @@ function App() {
       });
       const known = new Set(FEATURED.map((p) => p.name.toLowerCase()));
       const extras = repos
-        .filter((r) => !known.has(r.name.toLowerCase()))
+        .filter((r) => !known.has(r.name.toLowerCase()) && r.name.toLowerCase() !== "portfolio")
         .sort(
           (a, b) =>
             b.stargazers_count - a.stargazers_count ||
