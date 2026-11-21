@@ -78,7 +78,7 @@ const FEATURED = [
     icon: Database,
   },
   {
-    name: "rFruits",
+    name: "rfruits",
     title: "Fruit Sales Receipt App",
     description:
       "A mobile application for creating and managing fruit sales receipts.",
@@ -400,7 +400,7 @@ function App() {
     return FEATURED;
   }, [repos]);
 
-  const categories = ["All", ...new Set(projectList.flatMap((p) => Array.isArray(p.category) ? p.category : [p.category]))];
+  const categories = ["All", ...new Set([...projectList, ...FEATURED.filter(p => p.private)].flatMap((p) => Array.isArray(p.category) ? p.category : [p.category]))];
   const visibleProjects =
     filter === "All"
       ? projectList
