@@ -35,9 +35,16 @@ const FEATURED = [
     name: "Aplikasi-Pajak-Bumi-dan-Bangunan-Berbasis-WEB",
     title: "Property Tax Web App",
     description:
-      "A web-based application focused on land and building tax workflows.",
+      "A PHP web application for managing land and building tax (PBB) data, calculating NJOP/NJKP/tax values, generating payment receipts, and supporting multi-role access for admin and field officers.",
     language: "JavaScript",
     technologies: ["HTML", "CSS", "JavaScript", "PHP"],
+    highlights: [
+      "Land & building tax data management",
+      "NJOP/NJKP/PBB automatic calculation",
+      "Payment receipt (kwitansi) generation",
+      "Multi-role access: admin & field officer",
+      "Tax object and taxpayer data management",
+    ],
     category: "Web",
     accent: "violet",
     icon: Layers3,
@@ -46,7 +53,14 @@ const FEATURED = [
     name: "Movie_API_with_MovieDB",
     title: "Movie Discovery",
     description:
-      "A JavaScript project integrating movie data from The Movie Database API.",
+      "A PHP web app that integrates with The Movie Database (TMDB) API to browse movies by category — Popular, Now Playing, Upcoming, and Top Rated — with full detail pages including overview, trailer, reviews, and similar movies.",
+    highlights: [
+      "TMDB API integration",
+      "Browse by Popular, Now Playing, Upcoming, Top Rated",
+      "Movie detail: overview, trailer, reviews",
+      "Similar movie recommendations",
+      "Movie search functionality",
+    ],
     language: "JavaScript",
     technologies: ["HTML", "CSS", "JavaScript", "REST API"],
     category: "API",
@@ -58,7 +72,14 @@ const FEATURED = [
     name: "SPK-Metode-Weighted-Product-Dalam-Menentukan-Kelayakan-Peningkatan-Produksi-Kue-Kering",
     title: "Weighted Product Decision Support",
     description:
-      "A decision-support project applying the Weighted Product method to production feasibility assessment.",
+      "A PHP-based decision support system (SPK) using the Weighted Product method to assess the feasibility of increasing dry cake (kue kering) production, with criteria weighting, scoring, and result ranking.",
+    highlights: [
+      "Weighted Product (WP) algorithm implementation",
+      "Criteria and weight management",
+      "Product/alternative data management",
+      "Automated scoring and ranking calculation",
+      "Decision result output page",
+    ],
     language: "JavaScript",
     technologies: ["HTML", "CSS", "JavaScript"],
     category: "Logic",
@@ -70,7 +91,13 @@ const FEATURED = [
     name: "Aplikasi-berbasis-web-sederhana-untuk-mencatat-barang-beserta-klasifikasinya",
     title: "Inventory Classification",
     description:
-      "A simple web application for recording items and organizing them by classification.",
+      "A PHP web application for recording and managing inventory items with category classification. Supports full CRUD operations for items and categories, with user authentication and an admin panel.",
+    highlights: [
+      "Item and category CRUD operations",
+      "Category-based item classification",
+      "User authentication (login/logout)",
+      "Admin panel for data management",
+    ],
     language: "JavaScript",
     technologies: ["HTML", "CSS", "JavaScript"],
     category: "Web",
@@ -78,10 +105,53 @@ const FEATURED = [
     icon: Database,
   },
   {
+    name: "pajak-kendaraan",
+    title: "Vehicle Tax Web App",
+    description:
+      "A PHP web application for managing vehicle tax data, calculating tax and late fees, generating payment receipts, and supporting multi-role access for admin and field officers.",
+    language: "PHP",
+    technologies: ["HTML", "CSS", "JavaScript", "PHP"],
+    highlights: [
+      "Vehicle and owner data management",
+      "Tax and late fee (denda) calculation",
+      "Payment receipt (kwitansi) generation and printing",
+      "Multi-role access: admin & field officer",
+      "Report generation",
+    ],
+    category: "Web",
+    accent: "blue",
+    icon: Layers3,
+  },
+  {
+    name: "wedding-invitation",
+    title: "Wedding Invitation Platform",
+    description:
+      "A full-stack wedding invitation platform built with React and TypeScript. Guests can view and order digital invitations, make payments, and receive a unique shareable invitation link. Admins manage orders and preview invitations via a dashboard.",
+    language: "TypeScript",
+    technologies: ["React", "TypeScript", "Vite", "Node.js"],
+    highlights: [
+      "Guest landing page and invitation ordering",
+      "User order management and payment flow",
+      "Unique shareable invitation page per order",
+      "Admin dashboard with invitation preview",
+      "Role-based access: guest, user, admin",
+    ],
+    category: "Web",
+    accent: "pink",
+    icon: Sparkles,
+  },
+  {
     name: "rfruits",
     title: "Fruit Sales Receipt App",
     description:
-      "A mobile application for creating and managing fruit sales receipts.",
+      "A React Native (Expo) mobile app for creating fruit sales receipts. Supports adding multiple fruit items with weight and price per kg, calculates totals automatically, tracks payment status (paid, partial, unpaid), and saves receipts locally.",
+    highlights: [
+      "Create receipts with multiple fruit line items",
+      "Weight (kg) × price/kg subtotal calculation",
+      "Payment status: paid, partial, unpaid",
+      "Remaining balance tracking",
+      "Receipt history with search and date filter",
+    ],
     language: "JavaScript",
     technologies: ["React Native", "JavaScript"],
     category: "Mobile Application",
@@ -397,6 +467,7 @@ function App() {
           ? {
               ...item,
               title: item.private ? item.title : repo.name.replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
+              description: item.private ? item.description : (repo.description || item.description),
               url: repo.html_url,
               language: repo.language || item.language,
               stars: repo.stargazers_count,
@@ -781,7 +852,7 @@ function App() {
                   </div>
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
-                  {project.private && project.highlights && (
+                  {project.highlights && (
                     <ul className="project-highlights">
                       {project.highlights.map((h) => (
                         <li key={h}><ChevronRight size={12} />{h}</li>
