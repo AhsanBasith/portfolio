@@ -32,17 +32,6 @@ const GITHUB_URL = `https://github.com/${GITHUB_USER}`;
 // after reviewing each repository's README and implementation.
 const FEATURED = [
   {
-    name: "pajak-kendaraan.github.io",
-    title: "Vehicle Tax Lookup",
-    description:
-      "Web project related to vehicle tax information, presented as a lightweight public-facing site.",
-    language: "CSS",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    category: "Web",
-    accent: "mint",
-    icon: Globe,
-  },
-  {
     name: "Aplikasi-Pajak-Bumi-dan-Bangunan-Berbasis-WEB",
     title: "Property Tax Web App",
     description:
