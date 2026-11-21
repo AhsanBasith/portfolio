@@ -104,18 +104,6 @@ const FEATURED = [
     icon: Smartphone,
   },
   {
-    name: "return-pembelian",
-    title: "Purchase Returns",
-    description:
-      "A repository for a purchase-return workflow built with the Blade templating ecosystem.",
-    language: "Blade",
-    technologies: ["Laravel", "Blade", "PHP", "MySQL"],
-    category: ["Web", "GitHub"],
-    url: `https://github.com/${GITHUB_USER}/return-pembelian`,
-    accent: "yellow",
-    icon: GitBranch,
-  },
-  {
     name: "Quiccas Mobile App",
     title: "EV Charging Mobile Application",
     description:
