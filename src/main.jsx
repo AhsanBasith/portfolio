@@ -276,12 +276,15 @@ const FEATURED = [
 
 const STACK = [
   { name: "React", group: "Frontend", icon: Code2 },
+  { name: "TypeScript", group: "Frontend", icon: Terminal },
   { name: "JavaScript", group: "Frontend", icon: Terminal },
+  { name: "PHP", group: "Backend", icon: Terminal },
+  { name: "HTML & CSS", group: "Frontend", icon: Layers3 },
+  { name: "MySQL", group: "Backend", icon: Database },
   { name: "React Native / Expo", group: "Mobile", icon: Smartphone },
   { name: "Flutter", group: "Mobile", icon: Smartphone },
-  { name: "AWS Amplify", group: "Backend", icon: Cloud },
   { name: "GraphQL / AppSync", group: "Backend", icon: Database },
-  { name: "HTML & CSS", group: "Frontend", icon: Layers3 },
+  { name: "AWS Amplify", group: "Cloud", icon: Cloud },
 ];
 
 function ProjectModal({ project, onClose }) {
@@ -622,30 +625,46 @@ function App() {
                   <span className="code-green">'Ahsan Abdul Basith'</span>,
                 </div>
                 <div>
-                  <span className="line-num">03</span> &nbsp;focus: [
+                  <span className="line-num">03</span> &nbsp;stack: [
                 </div>
                 <div>
                   <span className="line-num">04</span> &nbsp;{" "}
-                  <span className="code-green">'Web'</span>,{" "}
-                  <span className="code-green">'Mobile'</span>,
+                  <span className="code-green">'React'</span>,{" "}
+                  <span className="code-green">'TypeScript'</span>,
                 </div>
                 <div>
                   <span className="line-num">05</span> &nbsp;{" "}
-                  <span className="code-green">'Problem solving'</span>
+                  <span className="code-green">'JavaScript'</span>,{" "}
+                  <span className="code-green">'PHP'</span>,
                 </div>
                 <div>
-                  <span className="line-num">06</span> &nbsp;],
+                  <span className="line-num">06</span> &nbsp;{" "}
+                  <span className="code-green">'HTML & CSS'</span>,{" "}
+                  <span className="code-green">'MySQL'</span>,
                 </div>
                 <div>
-                  <span className="line-num">07</span> &nbsp;curiosity:{" "}
+                  <span className="line-num">07</span> &nbsp;{" "}
+                  <span className="code-green">'React Native'</span>,{" "}
+                  <span className="code-green">'Flutter'</span>,
+                </div>
+                <div>
+                  <span className="line-num">08</span> &nbsp;{" "}
+                  <span className="code-green">'GraphQL'</span>,{" "}
+                  <span className="code-green">'AWS'</span>,
+                </div>
+                <div>
+                  <span className="line-num">09</span> &nbsp;],
+                </div>
+                <div>
+                  <span className="line-num">10</span> &nbsp;curiosity:{" "}
                   <span className="code-orange">Infinity</span>,
                 </div>
                 <div>
-                  <span className="line-num">08</span>
+                  <span className="line-num">11</span>
                   {"}"};
                 </div>
                 <div className="code-cursor-line">
-                  <span className="line-num">09</span>
+                  <span className="line-num">12</span>
                   <span className="cursor" />
                 </div>
               </div>
@@ -660,8 +679,44 @@ function App() {
             <div className="floating-chip chip-react">
               <span className="react-symbol">⚛</span> React
             </div>
+            <div className="floating-chip chip-ts">
+              <Terminal size={16} /> TypeScript
+            </div>
+            <div className="floating-chip chip-php">
+              <Terminal size={16} /> PHP
+            </div>
             <div className="floating-chip chip-mobile">
-              <Smartphone size={16} /> Mobile apps
+              <Smartphone size={16} /> React Native
+            </div>
+            <div className="floating-chip chip-flutter">
+              <Code2 size={16} /> Flutter
+            </div>
+            <div className="floating-chip chip-aws">
+              <Cloud size={16} /> AWS Amplify
+            </div>
+            <div className="floating-chip chip-js">
+              <Code2 size={16} /> JavaScript
+            </div>
+            <div className="floating-chip chip-html">
+              <Layers3 size={16} /> HTML & CSS
+            </div>
+            <div className="floating-chip chip-mysql">
+              <Database size={16} /> MySQL
+            </div>
+            <div className="floating-chip chip-graphql">
+              <Database size={16} /> GraphQL
+            </div>
+            <div className="chip-row-mobile">
+              <span><span className="react-symbol">⚛</span> React</span>
+              <span><Terminal size={13} /> TypeScript</span>
+              <span><Code2 size={13} /> JavaScript</span>
+              <span><Terminal size={13} /> PHP</span>
+              <span><Layers3 size={13} /> HTML & CSS</span>
+              <span><Database size={13} /> MySQL</span>
+              <span><Smartphone size={13} /> React Native</span>
+              <span><Code2 size={13} /> Flutter</span>
+              <span><Cloud size={13} /> AWS Amplify</span>
+              <span><Database size={13} /> GraphQL</span>
             </div>
             <div className="hero-decoration decoration-cross">✳</div>
             <div className="hero-decoration decoration-square" />
