@@ -387,6 +387,7 @@ function App() {
         return repo
           ? {
               ...item,
+              title: item.private ? item.title : repo.name.replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
               url: repo.html_url,
               language: repo.language || item.language,
               stars: repo.stargazers_count,
