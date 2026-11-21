@@ -181,6 +181,23 @@ const FEATURED = [
       "Creator publishing and selling workflows",
       "Backend services and business logic",
     ],
+    subProjects: [
+      {
+        label: "Mobile Application",
+        description: "A React Native mobile app for EV owners to browse, purchase, and apply custom sounds to their connected exhaust device.",
+        highlights: ["Connected EV sound device integration", "Sound browsing and purchase flow", "Device pairing and control"],
+      },
+      {
+        label: "Web",
+        description: "A landing page and web dashboard built with React, including a marketplace for sound creators to publish and sell their custom EV sounds.",
+        highlights: ["Landing page development", "Creator dashboard", "Sound marketplace UI", "Publishing and selling workflows"],
+      },
+      {
+        label: "Backend",
+        description: "Backend services and business logic powering the platform, including API integration and AWS Amplify infrastructure.",
+        highlights: ["Backend services and business logic", "API integration", "AWS Amplify infrastructure"],
+      },
+    ],
     image: "/projects/ev-sound-platform-preview.png",
     accent: "violet",
     icon: Sparkles,
@@ -249,7 +266,7 @@ function ProjectModal({ project, onClose }) {
 
           <p className="modal-description">{project.description}</p>
 
-          {project.highlights && (
+          {project.highlights && !project.subProjects && (
             <div className="modal-section">
               <h4>Highlights</h4>
               <ul className="modal-highlights">
@@ -257,6 +274,25 @@ function ProjectModal({ project, onClose }) {
                   <li key={h}><ChevronRight size={13} />{h}</li>
                 ))}
               </ul>
+            </div>
+          )}
+
+          {project.subProjects && (
+            <div className="modal-section">
+              <h4>Scope of Work</h4>
+              <div className="modal-subprojects">
+                {project.subProjects.map((sub) => (
+                  <div key={sub.label} className="modal-subproject">
+                    <div className="modal-subproject-label">{sub.label}</div>
+                    <p className="modal-subproject-desc">{sub.description}</p>
+                    <ul className="modal-highlights">
+                      {sub.highlights.map((h) => (
+                        <li key={h}><ChevronRight size={13} />{h}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 
